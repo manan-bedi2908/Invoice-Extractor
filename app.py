@@ -25,3 +25,16 @@ def input_image_setup(uploaded_file):
         return image_parts
     else:
         raise FileNotFoundError('No file uploaded!!')
+    
+
+st.set_page_config(page_title='Invoice Extractor')
+
+st.header('Invoice Extraction Tool')
+input = st.text_input('Input Prompt: ', key='input')
+uploaded_file = st.file_uploader('Choose an Image', 
+                                 type=['jpg', 'jpeg', 'png'])
+image = ''
+if uploaded_file is not None:
+    image = Image.open(uploaded_file)
+    st.image(image, caption='Uploaded Image', use_column_width=True)
+
