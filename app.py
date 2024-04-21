@@ -38,3 +38,11 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption='Uploaded Image', use_column_width=True)
 
+submit = st.button('Tell me about the invoice')
+
+input_prompt = """
+You are an expert in understandinhg invoices. You will receive
+input images as invoices and you will have to answer questions
+based on the input image.
+"""
+
